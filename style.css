@@ -1,0 +1,51 @@
+html { 
+  scroll-behavior: smooth; 
+}
+
+/* Nav underline effect */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: linear-gradient(to right, #6366f1, #ec4899);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Timeline line */
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #6366f1, #ec4899);
+}
+
+/* Skill circles */
+.skill-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--color) calc(var(--percent) * 1%), #1f1b2e 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  animation: fill 2s ease forwards;
+}
+
+@keyframes fill {
+  from { --percent: 0; }
+}
